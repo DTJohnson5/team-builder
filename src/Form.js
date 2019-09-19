@@ -1,46 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
+import "./App.css";
+import "./styles.css";
 
-const Form = props => {
-  const [member, setMember] = useState({ Member: "", Role: "", Contact: "" });
-
-  const update = event => {
-    setMember({ ...member, [event.target.field]: event.target.value });
-  };
-
-  const formSubmit = event => {
-    event.preventDefault();
-
-    const newMember = {
-      ...member
-    };
-    props.addMember(newMember);
-    setMember({ Member: "", Role: "", Content: "" });
-  };
-
+function Form ({member, handleChange, handleSubmit, addMember }) {
   return (
-    <form onSubmit={formSubmit}>
-      <div className="info">
-        <label htmlFor="name">Member</label>
-        <input field="name" type="text" onChange={update} value={member.name} />
-      </div>
-
-      <div className="info">
-        <label htmlFor="role">Role</label>
-        <input field="role" type="text" onChange={update} value={member.role} />
-      </div>
-
-      <div className="info">
-        <label htmlFor="email">Contact</label>
-        <input
-          field="email"
-          type="text"
-          onChange={update}
+    <section className = "form">
+      <form onSubmit={e => handleSubmit(e)}>
+        <label>
+          <br/>
+          Name: {""}
+          <input
+          name='name'
+          type='text'
+          value={member.name}
+          // onChange={e => handleChange(e)}
+          />
+          Role: {""}
+          <input
+          name='role'
+          type='text'
+          value={member.role}
+          // onChange={e => handleChange(e)}
+          />
+          Contact: {""}
+          <input
+          name='email'
+          type='email'
           value={member.email}
-        />
-      </div>
-      <button type="submit">Add Member</button>
-    </form>
-  );
-};
+          // onChange={e => handleChange(e)}
+          />
+        </label>
+        <button onClick={addMember}>Add Member</button>
+      </form>
+    </section>
+  )
+}
 
 export default Form;
