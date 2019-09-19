@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Vibes|Satisfy&display=swap');
+
+html,
+body,
+.App,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Indie Flower', cursive;
+  background-image: linear-gradient(mediumblue, darkblue, midnightblue);
+  color: deepskyblue;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width:100%;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.info {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-family: 'Vibes', cursive;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size:25px;
+    color: deepskyblue;
+    text-align: left;
+    padding-bottom:5%;
+    width: 250px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+width: 140px;
+height: 50px;
+color: deepskyblue;
+background-color: royalblue;
+font-size: 20px;
+font-weight: bold;
+font-family: 'Satisfy', cursive;
+margin-top: 10px;
+}
